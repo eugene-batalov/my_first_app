@@ -1,6 +1,3 @@
-require 'httparty'
-require 'pp'
-
 class Coursera
   include HTTParty
 
@@ -12,6 +9,3 @@ class Coursera
     get("", query: {query: term})["elements"]
   end
 end
-
-OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-pp Coursera.for "python"
